@@ -1,7 +1,7 @@
 import re
 
-age_param1 = int(input('Задайте параметр для группы БО-111111 '))
-age_param2 = int(input('Задайте параметр для группы БО-222222 '))
+age_param1 = int(input('Задайте параметр для группы БО-111111: '))
+age_param2 = int(input('Задайте параметр для группы БО-222222: '))
 
 
 f = open('students.txt', 'r+', encoding = "UTF-8")
@@ -18,7 +18,7 @@ for list_a in list_form:
             print('БО-111111: ', end = '')
             for elem in list_a:
                 if elem != '111111' and not elem.endswith('О'):
-                    if elem == '23':
+                    if list_a.index(elem) == 4 or list_a.index(elem) == 9:
                         elem = str(int(elem) + age_param1)
                         print(elem, ' ', end = '')
                     else:
@@ -27,7 +27,7 @@ for list_a in list_form:
             print('БО-222222: ', end = '')
             for elem in list_a:
                 if elem != '222222' and not elem.endswith('О'):
-                    if elem == '24':
+                    if list_a.index(elem) == 4:
                         elem = str(int(elem) + age_param2)
                         print(elem, ' ', end = '')
                     else:
